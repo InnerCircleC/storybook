@@ -68,6 +68,7 @@
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^6.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "postcss-cli": "^10.1.0",
