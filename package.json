@@ -22,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "postcss": "postcss src/stories/styles/button.css -o src/stories/button.css -w",
     "storybook": "start-storybook -p 6006 -s public",
+    "storybook:postcss": "yarn postcss & yarn storybook",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {

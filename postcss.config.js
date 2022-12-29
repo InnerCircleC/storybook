@@ -27,6 +27,5 @@ module.exports = {
         'nesting-rules': true,
       },
     },
-    // tailwindcss: {}, // tailwindcss 사용 시 필요
   },
 }
