@@ -1,6 +1,14 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+/* eslint-disable no-duplicate-imports */
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { AntdButton } from './AntdButton'
+
+// import type { ButtonProps } from './AntdButton'
+
+// declare module './AntdButton' {
+//   const value: ButtonProps
+//   export default value
+// }
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -18,30 +26,30 @@ const Template: ComponentStory<typeof AntdButton> = args => <AntdButton {...args
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  type: 'primary',
+  btnType: 'primary',
   label: 'Primary Button',
 }
 
 export const Default = Template.bind({})
 Default.args = {
-  type: 'default',
+  btnType: 'default',
   label: 'Default Button',
 }
 
 export const Dashed = Template.bind({})
 Dashed.args = {
-  type: 'dashed',
+  btnType: 'dashed',
   label: 'Dashed Button',
 }
 
-export const Text = Template.bind({})
-Text.args = {
-  type: 'text',
-  label: 'Text Button',
-}
+// export const Text = Template.bind({})
+// Text.args = {
+//   btnType: 'text',
+//   label: 'Text Button',
+// }
 
 export const Link = Template.bind({})
 Link.args = {
-  type: 'link',
+  btnType: 'link',
   label: 'Link Button',
 }
