@@ -1,6 +1,9 @@
+import { AxiosError } from 'axios'
+import type ButtonType from '../types/button'
+import { getButtonStyle } from '../server/apis/button'
 import styled from 'styled-components'
 
-export interface ButtonProps {
+interface ButtonProps {
   btnType: 'primary' | 'default' | 'dashed' | 'link'
   backgroundColor?: string
   size?: 'small' | 'medium' | 'large'
@@ -8,18 +11,21 @@ export interface ButtonProps {
   onClick?: () => void
 }
 
-const btnSize = {
-  small: ' font-size: 0.75rem; padding: 0.625rem 1rem; ',
-  medium: 'font-size: 0.875rem; padding: 0.6875rem 1.25rem;',
-  large: 'font-size: 1rem; padding: 0.75rem 1.5rem;',
-}
+// TODO: top level await를 사용하는 방식으로 바꾸기
+let btnSize: ButtonType.BtnSize
+let btnType: ButtonType.BtnType
 
-const btnType = {
-  primary: 'background-color: #1677ff; color: white;',
-  default: 'border: 0.0625rem solid #d9d9d9; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);',
-  dashed: 'border: 0.0625rem solid #d9d9d9; border-style: dashed; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);',
-  link: 'color: #1677ff;',
+const btnStyle = async () => {
+  try {
+    const data = await getButtonStyle()
+    btnSize = data.btnSize
+    btnType = data.btnType
+  } catch (error) {
+    const err = error as AxiosError
+    console.error(err.message)
+  }
 }
+btnStyle()
 
 const Button = styled.button<{ btnType: string; size: string }>`
   background-color: #fff;

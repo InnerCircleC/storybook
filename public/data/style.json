@@ -1,0 +1,13 @@
+{
+  "btnSize": {
+    "small": "font-size: 0.75rem; padding: 0.625rem 1rem;",
+    "medium": "font-size: 0.875rem; padding: 0.6875rem 1.25rem;",
+    "large": "font-size: 1rem; padding: 0.75rem 1.5rem;"
+  },
+  "btnType": {
+    "primary": "background-color: #1677ff; color: white;",
+    "default": "border: 0.0625rem solid #d9d9d9; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);",
+    "dashed": "border: 0.0625rem solid #d9d9d9; border-style: dashed; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);",
+    "link": "color: #1677ff;"
+  }
+}
