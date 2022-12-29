@@ -8,6 +8,19 @@ export interface ButtonProps {
   onClick?: () => void
 }
 
+const btnSize = {
+  small: ' font-size: 0.75rem; padding: 0.625rem 1rem; ',
+  medium: 'font-size: 0.875rem; padding: 0.6875rem 1.25rem;',
+  large: 'font-size: 1rem; padding: 0.75rem 1.5rem;',
+}
+
+const btnType = {
+  primary: 'background-color: #1677ff; color: white;',
+  default: 'border: 0.0625rem solid #d9d9d9; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);',
+  dashed: 'border: 0.0625rem solid #d9d9d9; border-style: dashed; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);',
+  link: 'color: #1677ff;',
+}
+
 const Button = styled.button<{ btnType: string; size: string }>`
   background-color: #fff;
   border: 0;
@@ -18,29 +31,8 @@ const Button = styled.button<{ btnType: string; size: string }>`
   font-weight: 700;
   line-height: 1;
 
-  ${props => {
-    switch (props.btnType) {
-      case 'primary':
-        return `background-color: #1677ff; color: white;`
-      case 'default':
-        return `border: 0.0625rem solid #d9d9d9; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);`
-      case 'dashed':
-        return `border: 0.0625rem solid #d9d9d9; border-style: dashed; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);`
-      case 'link':
-        return `color: #1677ff;`
-    }
-  }}
-
-  ${props => {
-    switch (props.size) {
-      case 'small':
-        return `font-size: 0.75rem; padding: 0.625rem 1rem;`
-      case 'medium':
-        return `font-size: 0.875rem; padding: 0.6875rem 1.25rem;`
-      case 'large':
-        return `font-size: 1rem; padding: 0.75rem 1.5rem;`
-    }
-  }}
+  ${props => btnType[props.btnType as keyof typeof btnType]}
+  ${props => btnSize[props.size as keyof typeof btnSize]}
 `
 
 export const AntdButton = ({ btnType = 'primary', size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
