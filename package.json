@@ -9,7 +9,10 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=c37b889e3bc8"
+    "chromatic": "npx chromatic --project-token=c37b889e3bc8",
+    "storybook:dev": "env-cmd -f .env.development yarn storybook",
+    "storybook:prod": "env-cmd -f .env yarn storybook",
+    "chromatic:prod": "env-cmd -f .env yarn chromatic"
   },
   "browserslist": {
     "production": [
@@ -25,7 +28,6 @@
   },
   "dependencies": {
     "axios": "^1.2.2",
-    "env-cmd": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -58,6 +60,7 @@
     "@typescript-eslint/parser": "^5.47.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^6.14.0",
+    "env-cmd": "^10.1.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "postcss-cli": "^10.1.0",
