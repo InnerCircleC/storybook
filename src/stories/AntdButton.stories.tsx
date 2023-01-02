@@ -26,30 +26,31 @@ const Template: ComponentStory<typeof AntdButton> = args => <AntdButton {...args
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  btnType: 'primary',
+  layout: 'primary',
   label: 'Primary Button',
 }
 
 export const Default = Template.bind({})
 Default.args = {
-  btnType: 'default',
+  layout: 'default',
   label: 'Default Button',
 }
 
 export const Dashed = Template.bind({})
 Dashed.args = {
-  btnType: 'dashed',
+  layout: 'dashed',
   label: 'Dashed Button',
 }
 
+// TODO: 추가할 것
 // export const Text = Template.bind({})
 // Text.args = {
-//   btnType: 'text',
+//   layout: 'text',
 //   label: 'Text Button',
 // }
 
 export const Link = Template.bind({})
 Link.args = {
-  btnType: 'link',
+  layout: 'link',
   label: 'Link Button',
 }
