@@ -45,9 +45,10 @@ export const AntdButton = ({ layout = 'primary', size = 'medium', backgroundColo
     ${props => btnSize[props.size as keyof ButtonType.BtnSize]}
   `
 
-  return (
+  // Object.keys().length를 확인하는 까닭은 FOUT 해결을 위해서다
+  return Object.keys(btnType).length ? (
     <Button type="button" style={{ backgroundColor }} layout={layout} size={size} {...props}>
       {label}
     </Button>
-  )
+  ) : null
 }
