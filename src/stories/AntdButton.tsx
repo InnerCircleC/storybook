@@ -8,15 +8,12 @@ import styled from 'styled-components'
 interface Props {
   layout: 'primary' | 'default' | 'dashed' | 'link'
   backgroundColor?: string
-  size: 'small' | 'medium' | 'large'
+  size: 'large' | 'medium' | 'small'
   label: string
   onClick?: () => void
 }
 
-interface ButtonProps {
-  layout: 'primary' | 'default' | 'dashed' | 'link'
-  size: 'small' | 'medium' | 'large'
-}
+type ButtonProps = Pick<Props, 'layout' | 'size'>
 
 export const AntdButton = ({ layout, size, backgroundColor, label, ...props }: Props) => {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
