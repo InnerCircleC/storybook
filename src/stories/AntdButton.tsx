@@ -13,7 +13,7 @@ interface Props {
   onClick?: () => void
 }
 
-interface BtnProps {
+interface ButtonProps {
   layout: string
   size: string
 }
@@ -31,7 +31,7 @@ export const AntdButton = ({ layout = 'primary', size = 'medium', backgroundColo
       .catch((err: AxiosError) => console.error(err))
   }, [])
 
-  const Button = styled.button<BtnProps>`
+  const Button = styled.button<ButtonProps>`
     background-color: #fff;
     border: 0;
     border-radius: 0.375rem;
