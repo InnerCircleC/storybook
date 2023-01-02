@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 import { AxiosError } from 'axios'
-import type ButtonType from '../types/button'
-import { getButtonStyle } from '../server/apis/button'
+import type ButtonType from '../../../types/button'
+import { getButtonStyle } from '../../../server/apis/button'
 import styled from 'styled-components'
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
 
 type ButtonProps = Pick<Props, 'size' | 'label'>
 
-export const AntdButton = ({ size, backgroundColor, label, ...props }: Props) => {
+export const Button = ({ size, backgroundColor, label, ...props }: Props) => {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
   const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
 
