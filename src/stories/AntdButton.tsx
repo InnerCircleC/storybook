@@ -28,7 +28,7 @@ export const AntdButton = ({ layout = 'primary', size = 'medium', backgroundColo
         setBtnSize(res.btnSize)
         setBtnType(res.btnType)
       })
-      .catch((err: AxiosError) => console.error(err))
+      .catch((err: AxiosError) => console.error(err.message))
   }, [])
 
   const Button = styled.button<ButtonProps>`
