@@ -19,7 +19,24 @@ const Template: ComponentStory<typeof AntdButton> = args => <AntdButton {...args
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  layout: 'primary',
   size: 'medium',
-  label: 'Primary Button',
+  label: 'primary',
+}
+
+export const Default = Template.bind({})
+Default.args = {
+  size: 'medium',
+  label: 'default',
+}
+
+export const Dashed = Template.bind({})
+Dashed.args = {
+  size: 'medium',
+  label: 'dashed',
+}
+
+export const Link = Template.bind({})
+Link.args = {
+  size: 'medium',
+  label: 'link',
 }

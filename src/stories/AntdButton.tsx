@@ -6,16 +6,15 @@ import { getButtonStyle } from '../server/apis/button'
 import styled from 'styled-components'
 
 interface Props {
-  layout: 'primary' | 'default' | 'dashed' | 'link'
   backgroundColor?: string
   size: 'large' | 'medium' | 'small'
   label: string
   onClick?: () => void
 }
 
-type ButtonProps = Pick<Props, 'layout' | 'size'>
+type ButtonProps = Pick<Props, 'size' | 'label'>
 
-export const AntdButton = ({ layout, size, backgroundColor, label, ...props }: Props) => {
+export const AntdButton = ({ size, backgroundColor, label, ...props }: Props) => {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
   const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
 
@@ -37,14 +36,15 @@ export const AntdButton = ({ layout, size, backgroundColor, label, ...props }: P
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 1;
+    text-transform: capitalize;
 
-    ${props => btnType[props.layout as keyof ButtonType.BtnType]}
+    ${props => btnType[props.label as keyof ButtonType.BtnType]}
     ${props => btnSize[props.size as keyof ButtonType.BtnSize]}
   `
 
   // Object.keys().length를 확인하는 까닭은 FOUT 해결을 위해서다
   return Object.keys(btnType).length ? (
-    <Button type="button" style={{ backgroundColor }} layout={layout} size={size} {...props}>
+    <Button type="button" style={{ backgroundColor }} label={label} size={size} {...props}>
       {label}
     </Button>
   ) : null
