@@ -27,30 +27,34 @@ export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   layout: 'primary',
+  size: 'medium',
   label: 'Primary Button',
 }
 
 export const Default = Template.bind({})
 Default.args = {
   layout: 'default',
+  size: 'medium',
   label: 'Default Button',
 }
 
 export const Dashed = Template.bind({})
 Dashed.args = {
   layout: 'dashed',
+  size: 'medium',
   label: 'Dashed Button',
 }
 
 // TODO: 추가할 것
 // export const Text = Template.bind({})
 // Text.args = {
-//   layout: 'text',
+//   layout: 'text',  size: 'medium',
 //   label: 'Text Button',
 // }
 
 export const Link = Template.bind({})
 Link.args = {
   layout: 'link',
+  size: 'medium',
   label: 'Link Button',
 }

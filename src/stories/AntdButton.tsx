@@ -8,17 +8,17 @@ import styled from 'styled-components'
 interface Props {
   layout: 'primary' | 'default' | 'dashed' | 'link'
   backgroundColor?: string
-  size?: 'small' | 'medium' | 'large'
+  size: 'small' | 'medium' | 'large'
   label: string
   onClick?: () => void
 }
 
 interface ButtonProps {
-  layout: string
-  size: string
+  layout: 'primary' | 'default' | 'dashed' | 'link'
+  size: 'small' | 'medium' | 'large'
 }
 
-export const AntdButton = ({ layout = 'primary', size = 'medium', backgroundColor, label, ...props }: Props) => {
+export const AntdButton = ({ layout, size, backgroundColor, label, ...props }: Props) => {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
   const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
 
