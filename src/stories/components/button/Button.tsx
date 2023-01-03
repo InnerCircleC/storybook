@@ -22,6 +22,7 @@ export const Button = ({ size, backgroundColor, label, ...props }: Props) => {
     getButtonStyle()
       .then(res => {
         setBtnSize(res.btnSize)
+        // TODO: style.json > btnType에서 text 프로퍼티 제거 가능하면 제거할 것
         setBtnType(res.btnType)
       })
       .catch((err: AxiosError) => console.error(err.message))

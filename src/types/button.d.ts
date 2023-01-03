@@ -9,6 +9,7 @@ namespace ButtonType {
     primary: string
     default: string
     dashed: string
+    text: string
     link: string
   }
 

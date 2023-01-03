@@ -35,6 +35,13 @@ Dashed.args = {
   label: 'dashed',
 }
 
+// FIXME: label 안 나오고 패딩 없는 등 문제 발생 원인 찾아서 수정할 것
+export const Text = Template.bind({})
+Dashed.args = {
+  size: 'medium',
+  label: 'text',
+}
+
 export const Link = Template.bind({})
 Link.args = {
   size: 'medium',

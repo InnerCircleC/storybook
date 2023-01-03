@@ -8,6 +8,7 @@
     "primary": "background-color: #1677ff; color: white;",
     "default": "border: 0.0625rem solid #d9d9d9; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);",
     "dashed": "border: 0.0625rem solid #d9d9d9; border-style: dashed; box-shadow: 0 0.125rem 0 rgb(0 0 0 / 0.02);",
+    "text": "color: #000;",
     "link": "color: #1677ff;"
   }
 }
