@@ -16,6 +16,7 @@ axios
   })
   .then(res => {
     const resultJSON = JSON.stringify(res.data)
-    fs.writeFileSync('design-tokens/token.json', resultJSON)
+    fs.mkdirSync('src/stories/assets/design-tokens', { recursive: true })
+    fs.writeFileSync('src/stories/assets/design-tokens/token.json', resultJSON)
   })
   .catch(err => console.warn(err))
