@@ -1,0 +1,42 @@
+{
+  "global": {
+    "Voog blue": {
+      "value": "#443DF6",
+      "type": "color"
+    },
+    "Voog grey": {
+      "value": "#1b2124",
+      "type": "color"
+    },
+    "small": {
+      "value": "4px",
+      "type": "borderRadius"
+    },
+    "medium": {
+      "value": "8px",
+      "type": "borderRadius"
+    },
+    "large": {
+      "value": "12px",
+      "type": "borderRadius"
+    },
+    "Voog Black": {
+      "value": "#000000",
+      "type": "color"
+    },
+    "voog violet": {
+      "value": "#8c03ee",
+      "type": "color"
+    },
+    "Grey #1 60%": {
+      "value": "rgba(141, 144, 145, 0.6)",
+      "type": "color"
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": [
+      "global"
+    ]
+  }
+}
