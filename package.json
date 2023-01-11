@@ -12,8 +12,7 @@
     "storybook:dev": "env-cmd -f .env.development yarn storybook",
     "storybook:prod": "env-cmd -f .env yarn storybook",
     "chromatic": "env-cmd -f .env npx chromatic --project-token=c37b889e3bc8",
-    "chromatic:no-changes": "env-cmd -f .env npx chromatic --auto-accept-changes --exit-zero-on-changes --project-token=c37b889e3bc8",
-    "token": "env-cmd -f .env node utils/requestFigmaApi.js"
+    "chromatic:no-changes": "env-cmd -f .env npx chromatic --auto-accept-changes --exit-zero-on-changes --project-token=c37b889e3bc8"
   },
   "browserslist": {
     "production": [
