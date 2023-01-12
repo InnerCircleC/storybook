@@ -80,7 +80,8 @@
   "include": [
     // "next-env.d.ts", // next.js 프로젝트 시 필요
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "build-theme.js"
   ],
   "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"]
   // "extends": "" // 상속 받으려는 tsconfig 파일 경로 입력
