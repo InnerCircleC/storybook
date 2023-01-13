@@ -118,8 +118,7 @@ S.registerFormat({
         }
         let tokenName = tokenPathItems.join('')
         tokenName = tokenName.includes('-') ? tokenName.replace('-', '') : tokenName
-        let toRetProp = 'export const ' + tokenName + ' : ' + S.formatHelpers.getTypeScriptType(token.value) + ';'
-        if (token.comment) toRetProp = toRetProp.concat(' // ' + token.comment)
+        const toRetProp = 'export type ' + tokenName + ' = ' + S.formatHelpers.getTypeScriptType(token.value) + ';'
         return toRetProp
       })
       .join('\n')
