@@ -47,3 +47,14 @@ url은 `src/server/axios.ts`에서 변경합니다.
 - styled-components
 
 > 평소에 제가 활용하는 환경 설정을 그대로 가지고 왔어요. 불필요한 설정이나 파일이 있습니다만 개발에 지장을 주지 않기도 하고, 이 레포지토리가 세밀하게 관리할 필요가 있을 정도로 프로젝트 진행에 영향을 주지는 않는다고 판단하여 그대로 놔두었어요.
+
+### get started
+
+처음 프로젝트 실행 시 아래 패키지를 설치해주세요.
+
+```
+$ npm i -g style-dictionary
+$ npm i -g token-transformer
+```
+
+token을 컴파일 하기 위해서 `yarn compile:token`을 사용합니다.
