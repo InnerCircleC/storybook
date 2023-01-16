@@ -8,9 +8,6 @@ export default {
   title: 'Antd/Spacing',
   component: Spacing,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof Spacing>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

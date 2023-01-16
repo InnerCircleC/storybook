@@ -4,11 +4,9 @@ type Size = 4 | 8 | 12 | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 
 type Unit = 'px'
 
 interface Props {
-  backgroundColor?: string
   size: `${Size}${Unit}`
-  onClick?: () => void
 }
 
-export const Spacing = ({ size, backgroundColor = '#0075FF', ...props }: Props) => {
-  return <div style={{ backgroundColor, width: size, height: size }} {...props} />
+export const Spacing = ({ size, ...props }: Props) => {
+  return <div style={{ backgroundColor: '#0075ff', width: size, height: size }} {...props} />
 }
