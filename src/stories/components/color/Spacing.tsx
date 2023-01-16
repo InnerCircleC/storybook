@@ -9,6 +9,6 @@ interface Props {
   onClick?: () => void
 }
 
-export const Spacing = ({ size, backgroundColor, ...props }: Props) => {
+export const Spacing = ({ size, backgroundColor = '#0075FF', ...props }: Props) => {
   return <div style={{ backgroundColor, width: size, height: size }} {...props} />
 }
