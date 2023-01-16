@@ -20,5 +20,4 @@ const Template: ComponentStory<typeof Spacing> = args => <Spacing {...args} />
 export const PX4 = Template.bind({})
 PX4.args = {
   size: '4px',
-  label: 'default',
 }
