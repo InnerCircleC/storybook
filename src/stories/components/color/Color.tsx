@@ -5,6 +5,8 @@ import {
   GlobalInfoPositive,
   GlobalInfoWarning,
   GlobalWhite,
+  LightBorderBorderOpaque,
+  LightBorderBorderTransparent,
   LightContentsContentPrimary,
   LightContentsContentSecondary,
   LightContentsContentTertiary,
@@ -12,16 +14,6 @@ import {
 } from '../../../../theme/js/global'
 
 const colors = {
-  // primary: GlobalBlack,
-  // secondary: GlobalWhite,
-  // tertiary: LightTertiary,
-  // accent: GlobalInfoAccent,
-  // negative: GlobalInfoNegative,
-  // warning: GlobalInfoWarning,
-  // positive: GlobalInfoPositive,
-  // contentPrimary: LightContentsContentPrimary,
-  // contentSecondary: LightContentsContentSecondary,
-  // contentTertiary: LightContentsContentTertiary,
   foundation: {
     primary: GlobalBlack,
     secondary: GlobalWhite,
@@ -36,22 +28,28 @@ const colors = {
     contentSecondary: LightContentsContentSecondary,
     contentTertiary: LightContentsContentTertiary,
   },
+  border: {
+    borderOpaque: LightBorderBorderOpaque,
+    borderTransparent: LightBorderBorderTransparent,
+  },
 }
 
 interface Props {
-  type: 'foundation' | 'contents'
+  type: 'foundation' | 'contents' | 'border'
   foundationColor: keyof typeof colors.foundation
   contentsColor: keyof typeof colors.contents
+  borderColor: keyof typeof colors.border
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Color = ({ type, foundationColor, contentsColor, ...props }: Props) => {
-  const color = foundationColor || contentsColor
+export const Color = ({ type, foundationColor, contentsColor, borderColor, ...props }: Props) => {
+  const currentType = colors[type]
+  const currentColor = foundationColor || contentsColor || borderColor
+  const backgroundColor = currentType[currentColor as keyof typeof currentType]
 
   return (
     <div
       style={{
-        backgroundColor: colors[type as keyof typeof colors.foundation & keyof typeof colors.contents][color],
+        backgroundColor,
         width: '340px',
         height: '197px',
       }}

@@ -10,10 +10,13 @@ export default {
   argTypes: {
     type: { control: false },
     foundationColor: {
-      if: { arg: 'contentsColor', truthy: false },
+      if: { arg: 'foundationColor', truthy: true },
     },
     contentsColor: {
-      if: { arg: 'foundationColor', truthy: false },
+      if: { arg: 'contentsColor', truthy: true },
+    },
+    borderColor: {
+      if: { arg: 'borderColor', truthy: true },
     },
   },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
@@ -33,4 +36,10 @@ export const Contents = Template.bind({})
 Contents.args = {
   type: 'contents',
   contentsColor: 'contentPrimary',
+}
+
+export const Border = Template.bind({})
+Border.args = {
+  type: 'border',
+  borderColor: 'borderOpaque',
 }
