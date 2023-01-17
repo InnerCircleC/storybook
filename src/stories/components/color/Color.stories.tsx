@@ -7,6 +7,15 @@ import { Color } from './Color'
 export default {
   title: 'Foundation/Color',
   component: Color,
+  argTypes: {
+    type: { control: false },
+    foundationColor: {
+      if: { arg: 'contentsColor', truthy: false },
+    },
+    contentsColor: {
+      if: { arg: 'foundationColor', truthy: false },
+    },
+  },
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Color>
 
@@ -16,5 +25,12 @@ const Template: ComponentStory<typeof Color> = args => <Color {...args} />
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Foundation = Template.bind({})
 Foundation.args = {
-  color: 'primary',
+  type: 'foundation',
+  foundationColor: 'primary',
+}
+
+export const Contents = Template.bind({})
+Contents.args = {
+  type: 'contents',
+  contentsColor: 'contentPrimary',
 }
