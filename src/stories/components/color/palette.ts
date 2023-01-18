@@ -24,6 +24,7 @@ export const colors = {
     positive: GlobalInfoPositive,
   },
   contents: {
+    ContentDefault: GlobalWhite,
     contentPrimary: LightContentsContentPrimary,
     contentSecondary: LightContentsContentSecondary,
     contentTertiary: LightContentsContentTertiary,
