@@ -37,6 +37,7 @@ const colors = {
 type KeyOfFoundation = keyof typeof colors.foundation
 type KeyOfContentsColor = keyof typeof colors.contents
 type KeyOfBorder = keyof typeof colors.border
+type CurrentColor = KeyOfFoundation | KeyOfContentsColor | KeyOfBorder
 
 interface Props {
   type: 'foundation' | 'contents' | 'border'
@@ -47,8 +48,7 @@ interface Props {
 
 export const Color = ({ type, foundationColor, contentsColor, borderColor, ...props }: Props) => {
   const currentType = colors[type]
-  const currentColor: KeyOfFoundation | KeyOfContentsColor | KeyOfBorder =
-    foundationColor || contentsColor || borderColor
+  const currentColor: CurrentColor = foundationColor || contentsColor || borderColor
   const backgroundColor = currentType[currentColor as keyof typeof currentType]
 
   return (
