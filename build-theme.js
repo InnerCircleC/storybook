@@ -86,8 +86,7 @@ S.registerTransform({
     for (let i = 0, l = tokenPathItems.length; i < l; ++i) {
       tokenPathItems[i] = tokenPathItems[i].charAt(0).toUpperCase() + tokenPathItems[i].slice(1)
     }
-    let tokenName = tokenPathItems.join('')
-    tokenName = tokenName.includes('-') ? tokenName.replace('-', '') : tokenName
+    const tokenName = tokenPathItems.join('').replace('-', '')
     return tokenName
   },
 })
