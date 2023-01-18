@@ -1,7 +1,11 @@
 {
-  "name": "storybook",
+  "name": "group-c",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "dist/index.ts",
+  "files": [
+    "types/button.d.ts"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
