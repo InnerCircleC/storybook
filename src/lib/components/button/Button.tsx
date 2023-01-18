@@ -1,14 +1,9 @@
-import { useEffect, useState } from 'react'
-
-import { AxiosError } from 'axios'
-import type ButtonType from '../../../types/button'
 import { colors } from '../../../utils/color'
-import { getButtonStyle } from '../../../server/apis/button'
 import styled from 'styled-components'
 
 interface Props {
-  backgroundColor?: string
-  color?: string
+  backgroundColor?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'negative' | 'warning' | 'positive'
+  color?: 'contentDefault' | 'contentPrimary' | 'contentSecondary' | 'contentTertiary'
   size?: 'large' | 'medium' | 'small'
   label?: string
   onClick?: () => void
@@ -16,25 +11,17 @@ interface Props {
 
 type ButtonProps = Pick<Props, 'size' | 'label'>
 
+const btnSize = {
+  small: 'font-size: 0.75rem; padding: 0.625rem 1rem;',
+  medium: 'font-size: 0.875rem; padding: 0.6875rem 1.25rem;',
+  large: 'font-size: 1rem; padding: 0.75rem 1.5rem;',
+}
+
 function Button({ size = 'medium', backgroundColor = 'primary', color = 'contentDefault', label = 'primary' }: Props) {
-  const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
-  const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
+  const currentBgColor = colors.foundation[backgroundColor]
+  const currentColor = colors.contents[color]
 
-  const currentBgColor = colors.foundation[backgroundColor as keyof typeof colors.foundation]
-  const currentColor = colors.contents[color as keyof typeof colors.contents]
-
-  useEffect(() => {
-    getButtonStyle()
-      .then(res => {
-        setBtnSize(res.btnSize)
-        // TODO: style.json > btnType에서 text 프로퍼티 제거 가능하면 제거할 것
-        setBtnType(res.btnType)
-      })
-      .catch((err: AxiosError) => console.error(err.message))
-  }, [])
-
-  const Button = styled.button<ButtonProps>`
-    background-color: #fff;
+  const ButtonComp = styled.button<ButtonProps>`
     border: 0;
     border-radius: 0.375rem;
     cursor: pointer;
@@ -44,26 +31,24 @@ function Button({ size = 'medium', backgroundColor = 'primary', color = 'content
     line-height: 1;
     text-transform: capitalize;
 
-    ${props => btnType[props.label as keyof ButtonType.BtnType]}
-    ${props => btnSize[props.size as keyof ButtonType.BtnSize]}
+    ${props => btnSize[props.size ?? 'medium']}
   `
 
-  // FOUT 해결을 위해 Object.keys().length 확인
-  return Object.keys(btnType).length ? (
-    <Button
+  return (
+    <ButtonComp
       type="button"
       style={{
         backgroundColor: currentBgColor,
         color: currentColor,
         border: `${currentBgColor} 1px solid`,
-        padding: `8px`,
+        padding: `12px 16px`,
       }}
       label={label}
       size={size}
     >
       {label}
-    </Button>
-  ) : null
+    </ButtonComp>
+  )
 }
 
 export default Button
