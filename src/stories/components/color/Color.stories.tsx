@@ -1,4 +1,3 @@
-/* eslint-disable no-duplicate-imports */
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Color } from './Color'
