@@ -15,7 +15,7 @@ import {
   GlobalSpace7,
   GlobalSpace8,
   GlobalSpace9,
-} from '../../../../theme/js/global'
+} from '../../../theme/js/global'
 
 export const space = {
   space1: GlobalSpace1,
