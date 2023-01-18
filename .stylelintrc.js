@@ -99,7 +99,7 @@ module.exports = {
     'unit-case': 'lower',
     'value-keyword-case': [
       'lower',
-      { ignoreKeywords: ['backgroundColor', 'currentBgColor', 'borderColor', 'paddingX', 'paddingY'] },
+      { ignoreKeywords: ['backgroundColor', 'currentBgColor', 'borderColor', 'currentColor'] },
     ],
     'value-list-comma-space-after': 'always-single-line',
     'value-list-comma-space-before': 'never',
