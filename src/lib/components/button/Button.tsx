@@ -9,7 +9,6 @@ import styled from 'styled-components'
 interface Props {
   backgroundColor?: string
   color?: string
-  borderColor?: string
   size?: 'large' | 'medium' | 'small'
   label?: string
   onClick?: () => void
@@ -17,17 +16,12 @@ interface Props {
 
 type ButtonProps = Pick<Props, 'size' | 'label'>
 
-function Button({
-  size = 'medium',
-  backgroundColor = 'primary',
-  color = 'contentDefault',
-  borderColor = '#fff',
-  label = 'primary',
-}: Props) {
+function Button({ size = 'medium', backgroundColor = 'primary', color = 'contentDefault', label = 'primary' }: Props) {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
   const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
 
   const currentBgColor = colors.foundation[backgroundColor as keyof typeof colors.foundation]
+  const currentColor = colors.contents[color as keyof typeof colors.contents]
 
   useEffect(() => {
     getButtonStyle()
@@ -60,8 +54,8 @@ function Button({
       type="button"
       style={{
         backgroundColor: currentBgColor,
-        color,
-        border: `${borderColor} 1px solid`,
+        color: currentColor,
+        border: `${currentBgColor} 1px solid`,
         padding: `8px`,
       }}
       label={label}
