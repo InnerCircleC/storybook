@@ -97,7 +97,10 @@ module.exports = {
     'selector-list-comma-newline-after': 'always-multi-line',
     'string-quotes': 'single',
     'unit-case': 'lower',
-    'value-keyword-case': ['lower', { ignoreKeywords: ['backgroundColor'] }],
+    'value-keyword-case': [
+      'lower',
+      { ignoreKeywords: ['backgroundColor', 'currentBgColor', 'borderColor', 'currentColor'] },
+    ],
     'value-list-comma-space-after': 'always-single-line',
     'value-list-comma-space-before': 'never',
   },

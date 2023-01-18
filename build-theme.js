@@ -27,7 +27,7 @@ S.registerFormat({
 
 // 포멧 구성 함수
 const setCSS = theme => ({
-  buildPath: `${OUTPUT_DIR}/`,
+  buildPath: `src/${OUTPUT_DIR}/`,
   transforms: ['attribute/cti', 'name/cti/kebab', 'shadow/shorthand', 'typography/shorthand'],
   files: [
     {
@@ -67,7 +67,7 @@ S.registerTransform({
 
 // 포멧 구성 함수
 const setJS = theme => ({
-  buildPath: `${OUTPUT_DIR}/`,
+  buildPath: `src/${OUTPUT_DIR}/`,
   transforms: ['name/js/es6'],
   files: [
     {
@@ -95,7 +95,7 @@ S.registerTransform({
 
 // 포멧 구성 함수
 const setTS = theme => ({
-  buildPath: `${OUTPUT_DIR}/`,
+  buildPath: `src/${OUTPUT_DIR}/`,
   files: [
     {
       destination: `ts/${theme}.ts`,
@@ -127,7 +127,7 @@ S.registerFormat({
 /* 스타일 딕셔너리 구성 유틸리티 함수 ------------------------------------------------- */
 
 const getStyleDictionaryConfig = theme => ({
-  source: [`${INPUT_DIR}/${theme}.json`],
+  source: [`src/${INPUT_DIR}/${theme}.json`],
   platforms: {
     css: setCSS(theme),
     js: setJS(theme),
@@ -166,4 +166,4 @@ function transformThemeJSON(path) {
   fs.writeFileSync(`${path.split('.json')[0]}.transformed.json`, JSON.stringify(result, null, 2))
 }
 
-transformThemeJSON('./theme/global.json')
+transformThemeJSON('./src/theme/global.json')

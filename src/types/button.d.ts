@@ -1,4 +1,4 @@
-namespace ButtonType {
+export namespace ButtonType {
   export interface BtnSize {
     small: string
     medium: string
@@ -18,5 +18,3 @@ namespace ButtonType {
     btnType: BtnType
   }
 }
-
-export default ButtonType

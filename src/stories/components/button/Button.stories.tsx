@@ -2,6 +2,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Button } from './Button'
+import React from 'react'
 import { colors } from '../color'
 import { space } from '../spacing'
 
@@ -19,7 +20,7 @@ Primary.args = {
   size: 'medium',
   label: 'primary',
   backgroundColor: `${colors.foundation.primary}`,
-  color: `${colors.contents.ContentDefault}`,
+  color: `${colors.contents.contentDefault}`,
   borderColor: `${colors.border.borderOpaque}`,
   paddingX: `${space.space4}`,
   paddingY: `${space.space2}`,
@@ -52,7 +53,7 @@ Accent.args = {
   size: 'medium',
   label: 'accent',
   backgroundColor: `${colors.foundation.accent}`,
-  color: `${colors.contents.ContentDefault}`,
+  color: `${colors.contents.contentDefault}`,
   borderColor: `${colors.border.borderTransparent}`,
   paddingX: `${space.space4}`,
   paddingY: `${space.space2}`,
@@ -63,7 +64,7 @@ Negative.args = {
   size: 'medium',
   label: 'negative',
   backgroundColor: `${colors.foundation.negative}`,
-  color: `${colors.contents.ContentDefault}`,
+  color: `${colors.contents.contentDefault}`,
   borderColor: `${colors.border.borderTransparent}`,
   paddingX: `${space.space4}`,
   paddingY: `${space.space2}`,
@@ -74,7 +75,7 @@ Warning.args = {
   size: 'medium',
   label: 'warning',
   backgroundColor: `${colors.foundation.warning}`,
-  color: `${colors.contents.ContentDefault}`,
+  color: `${colors.contents.contentDefault}`,
   borderColor: `${colors.border.borderTransparent}`,
   paddingX: `${space.space4}`,
   paddingY: `${space.space2}`,
@@ -85,7 +86,7 @@ Positive.args = {
   size: 'medium',
   label: 'positive',
   backgroundColor: `${colors.foundation.positive}`,
-  color: `${colors.contents.ContentDefault}`,
+  color: `${colors.contents.contentDefault}`,
   borderColor: `${colors.border.borderTransparent}`,
   paddingX: `${space.space4}`,
   paddingY: `${space.space2}`,
