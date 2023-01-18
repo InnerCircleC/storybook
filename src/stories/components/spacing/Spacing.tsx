@@ -17,6 +17,8 @@ import {
   GlobalSpace9,
 } from '../../../theme/js/global'
 
+import React from 'react'
+
 type Size =
   | typeof GlobalSpace1
   | typeof GlobalSpace2

@@ -2,6 +2,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 
 import { Button } from './Button'
+import React from 'react'
 import { colors } from '../color'
 import { space } from '../spacing'
 

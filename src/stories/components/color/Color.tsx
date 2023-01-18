@@ -13,6 +13,8 @@ import {
   LightTertiary,
 } from '../../../theme/js/global'
 
+import React from 'react'
+
 const colors = {
   foundation: {
     primary: GlobalBlack,
