@@ -1,35 +1,29 @@
 import { useEffect, useState } from 'react'
 
 import { AxiosError } from 'axios'
-import type ButtonType from '../../types/button'
-import { colors } from '../data/color'
-import { getButtonStyle } from '../../server/apis/button'
-// import { space } from '../data/spacing'
+import type ButtonType from '../../../types/button'
+import { colors } from '../../../utils/color'
+import { getButtonStyle } from '../../../server/apis/button'
 import styled from 'styled-components'
 
 interface Props {
   backgroundColor?: string
   color?: string
   borderColor?: string
-  paddingX?: string
-  paddingY?: string
-  size: 'large' | 'medium' | 'small'
-  label: string
+  size?: 'large' | 'medium' | 'small'
+  label?: string
   onClick?: () => void
 }
 
 type ButtonProps = Pick<Props, 'size' | 'label'>
 
-export const Button = ({
-  size,
+function Button({
+  size = 'medium',
   backgroundColor = 'primary',
   color = 'contentDefault',
   borderColor = '#fff',
-  paddingX = '8px',
-  paddingY = '8px',
-  label = 'Primary',
-  ...props
-}: Props) => {
+  label = 'primary',
+}: Props) {
   const [btnSize, setBtnSize] = useState({} as ButtonType.BtnSize)
   const [btnType, setBtnType] = useState({} as ButtonType.BtnType)
 
@@ -68,13 +62,14 @@ export const Button = ({
         backgroundColor: currentBgColor,
         color,
         border: `${borderColor} 1px solid`,
-        padding: `${paddingY} ${paddingX}`,
+        padding: `8px`,
       }}
       label={label}
       size={size}
-      {...props}
     >
       {label}
     </Button>
   ) : null
 }
+
+export default Button
