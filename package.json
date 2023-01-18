@@ -2,9 +2,9 @@
   "name": "group-c",
   "version": "0.1.0",
   "private": false,
-  "main": "dist/index.ts",
+  "main": "./dist/lib/components/index.js",
   "files": [
-    "types/button.d.ts"
+    "./dist"
   ],
   "scripts": {
     "start": "react-scripts start",
@@ -19,7 +19,8 @@
     "chromatic:no-changes": "env-cmd -f .env npx chromatic --auto-accept-changes --exit-zero-on-changes --project-token=c37b889e3bc8",
     "create:token": "token-transformer data/tokens.json theme/global.json global",
     "build:theme": "node build-theme.js",
-    "compile:token": "yarn create:token && yarn build:theme"
+    "compile:token": "yarn create:token && yarn build:theme",
+    "prepare": "rm -rf dist && npx tsc"
   },
   "browserslist": {
     "production": [
