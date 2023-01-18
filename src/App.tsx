@@ -1,6 +1,5 @@
 import './App.css'
 
-import Components from 'group-c'
 import React from 'react'
 import logo from './logo.svg'
 
@@ -15,7 +14,6 @@ function App() {
         <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
-        <Components.Button size="large" />
       </header>
     </div>
   )

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { AxiosError } from 'axios'
-import type ButtonType from '../../../types/button'
+import type { ButtonType } from '../../../types/button'
 import { getButtonStyle } from '../../../server/apis/button'
 import styled from 'styled-components'
 
