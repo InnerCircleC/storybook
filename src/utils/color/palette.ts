@@ -11,7 +11,7 @@ import {
   LightContentsContentSecondary,
   LightContentsContentTertiary,
   LightTertiary,
-} from '../../../../theme/js/global'
+} from '../../theme/js/global'
 
 export const colors = {
   foundation: {
