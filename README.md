@@ -17,7 +17,7 @@ Figma Token을 이용해 피그마 디자인 단계에서부터 일관된 시스
 [피그마 실습 링크](<https://www.figma.com/file/3mXplUlIMMQsyftgmTSVwT/%E2%9D%96-Uber-(Started)-(Copy)?node-id=105%3A1507&t=um01JvZsUPJGCQIY-1>)
 Figma token에서 추출된 데이터 `data/tokens.json`에 대한 의존성을 갖게 됩니다.
 
-![피그마 토큰](figma.png)
+![피그마 토큰](./src/stories/assets/figma.png)
 
 ### Style-Dictionary, Token-transformer
 
