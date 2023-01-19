@@ -1,6 +1,6 @@
 {
   "name": "group-c",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": false,
   "main": "./dist/lib/components/index.js",
   "files": [
@@ -17,7 +17,7 @@
     "storybook:prod": "env-cmd -f .env yarn storybook",
     "chromatic": "env-cmd -f .env npx chromatic --project-token=c37b889e3bc8",
     "chromatic:no-changes": "env-cmd -f .env npx chromatic --auto-accept-changes --exit-zero-on-changes --project-token=c37b889e3bc8",
-    "create:token": "token-transformer data/tokens.json theme/global.json global",
+    "create:token": "token-transformer data/tokens.json src/theme/global.json global",
     "build:theme": "node build-theme.js",
     "compile:token": "yarn create:token && yarn build:theme",
     "prepare": "rm -rf dist && npx tsc"
